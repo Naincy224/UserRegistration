@@ -8,11 +8,16 @@ public class UserRegistrationMain {
 		
 		System.out.println("Welcome to User registration program ");
 
-		
+		//UC1
 		Scanner sc = new Scanner (System.in);
 		System.out.println("Enter first name:");
 		String name1 = sc.next();
 		System.out.println(Name (name1));
+		
+		//UC2
+		System.out.println("Enter last name:");
+		String name2 = sc.next();
+		System.out.println(Name (name2));
 		
 	}
 private static boolean Name(String name) {
