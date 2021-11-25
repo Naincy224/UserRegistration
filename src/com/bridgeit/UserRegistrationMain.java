@@ -10,6 +10,7 @@ public class UserRegistrationMain {
 		String name2;
 		String email;
 		String mobile;
+		String password;
 		
 		RegexPattern pattern = new RegexPattern();
 		
@@ -21,7 +22,9 @@ public class UserRegistrationMain {
 		email = pattern.getEmail();
 		pattern.addMobile();
 		mobile = pattern.getMobile();
+		pattern.addPassword();
+		password = pattern.getPassword();
 		
-		System.out.println("First name : " + name1 + "  Last name :" + name2 +"  Email id :" + email + "Mobile no. :" + mobile);
+		System.out.println("First name : " + name1 + "  Last name :" + name2 +"  Email id :" + email + "Mobile no. :" + mobile + "Password :" + password);
 	}
 }
