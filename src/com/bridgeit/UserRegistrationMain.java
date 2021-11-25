@@ -1,7 +1,5 @@
 package com.bridgeit;
 
-import java.util.Scanner;
-
 public class UserRegistrationMain {
 
 	public static void main(String[] args) {
@@ -11,6 +9,7 @@ public class UserRegistrationMain {
 		String name1;
 		String name2;
 		String email;
+		String mobile;
 		
 		RegexPattern pattern = new RegexPattern();
 		
@@ -20,7 +19,9 @@ public class UserRegistrationMain {
 		name2 = pattern.getName2();
 		pattern.addEmail();
 		email = pattern.getEmail();
+		pattern.addMobile();
+		mobile = pattern.getMobile();
 		
-		System.out.println("First name : " + name1 + "  Last name :" + name2 +"  Email id :" + email );
+		System.out.println("First name : " + name1 + "  Last name :" + name2 +"  Email id :" + email + "Mobile no. :" + mobile);
 	}
 }
