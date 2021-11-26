@@ -9,6 +9,7 @@ public class RegexPattern {
 	private String email;
 	private String mobile;
 	private String password;
+	
 	Scanner sc = new Scanner(System.in);
 
 	public void addFirstName() {
@@ -50,7 +51,7 @@ public class RegexPattern {
 	public void addMobile() {
 		System.out.println("Enter a valid mobile no:");
 		mobile = sc.nextLine();
-		boolean check = mobile.matches("^([0-9]{1,2})\\s([0-9]{10})$");
+		boolean check =   mobile.matches("^([0-9]{1,2})\\s[0-9]{10}$");
 		if (check == true) {
 			
 		}else {
@@ -61,10 +62,10 @@ public class RegexPattern {
 	public void addPassword() {
 		System.out.print("Enter Password : ");
 		password = sc.nextLine();
-		boolean check = password.matches("^[a-zA-Z]{8,}$");
+		boolean check = password.matches("^(?=.*[A-Z]).[a-zA-Z]{8,}$");
 		if (check == true) {
 		} else {
-			System.out.println("Invalid password format \nAdd again [Atleast 8 Character ]");
+			System.out.println("Invalid password format add atleast 8 character having a upper case" );
 			addPassword();
 		}
 	}
