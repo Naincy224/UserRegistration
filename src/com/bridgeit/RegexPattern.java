@@ -62,7 +62,7 @@ public class RegexPattern {
 	public void addPassword() {
 		System.out.print("Enter Password : ");
 		password = sc.nextLine();
-		boolean check = password.matches("^(?=.*[A-Z a-z])(?=.*[0-9]).{8,}$");
+		boolean check = password.matches("^(?=.*[A-Z a-z])(?=.*[0-9])(?=.*[@|#|$|%|^|&|-|+|=|(|)|]).{8,}$");
 		if (check == true) {
 		} else {
 			System.out.println("Invalid password format add atleast 8 character having a upper case" );
