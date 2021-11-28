@@ -4,118 +4,84 @@ import java.util.Scanner;
 
 public class RegexPattern {
 
-	private String name1;
-	private String name2;
-	private String email;
-	private String mobile;
-	private String password;
-	
-	Scanner sc = new Scanner(System.in);
+	UserRegistration userRegistration = new UserRegistration();
 
-	public void addFirstName() {
+	public boolean addFirstName() {
 
+		Scanner sc1 = new Scanner(System.in);
 		System.out.println("Enter first name:");
-		name1 = sc.nextLine();
-		boolean check = name1.matches("^([A-Z]{1}+[a-z]{2,})*$");
+		String name = sc1.nextLine();
+		userRegistration.setName1(name);
+		boolean check = userRegistration.getName1().matches("^([A-Z]{1}+[a-z]{2,})$");
+
 		if (check == true) {
 		} else {
 			System.out.println("invalid first name add a valid name");
 			addFirstName();
 		}
+		return check;
 	}
 
-	public void addLastName() {
-
+	public boolean addLastName() {
+		Scanner sc2 = new Scanner(System.in);
 		System.out.println("Enter last name:");
-		name2 = sc.nextLine();
-		boolean check = name2.matches("^([A-Z]{1}+[a-z]{2,})*$");
+		String name = sc2.nextLine();
+		userRegistration.setName2(name);
+		boolean check = userRegistration.getName2().matches("^([A-Z]{1}+[a-z]{2,})$");
 		if (check == true) {
 		} else {
 			System.out.println("invalid last name add a valid name");
 			addLastName();
 		}
+		return check;
 	}
 
-	public void addEmail() {
-
+	public boolean addEmail() {
+		Scanner sc3 = new Scanner(System.in);
 		System.out.println("Enter a email id:");
-		email = sc.nextLine();
-		boolean check = email.matches("^[0-9a-zA-Z+-._]+@[-+_.0-9a-zA-Z]*.[a-zA-Z]{2,3}.([a-zA-z]{2,3})*$");
+		String email = sc3.nextLine();
+		userRegistration.setEmail(email);
+		boolean check = userRegistration.getEmail()
+				.matches("^[0-9a-zA-Z+-._]+@[-+_.0-9a-zA-Z]{2,}.[a-zA-Z]{2,3}.([a-zA-z]{2,3})*$");
 		if (check == true) {
 		} else {
 			System.out.println("invalid email id add a valid email id");
 			addEmail();
 		}
+		return check;
 	}
-	
-	public void addMobile() {
+
+	public boolean addMobile() {
+		Scanner sc4 = new Scanner(System.in);
 		System.out.println("Enter a valid mobile no:");
-		mobile = sc.nextLine();
-		boolean check =   mobile.matches("^([0-9]{1,2})\\s[0-9]{10}$");
+		String mobile = sc4.nextLine();
+		userRegistration.setMobile(mobile);
+		boolean check = userRegistration.getMobile().matches("^([0-9]{1,2})\\s[0-9]{10}$");
 		if (check == true) {
-			
-		}else {
+
+		} else {
 			System.out.println(" Invalid mobile no. add a valid no.");
-		     addMobile();
+			addMobile();
 		}
+		return check;
 	}
-	public void addPassword() {
+
+	public boolean addPassword() {
+		Scanner sc5 = new Scanner(System.in);
 		System.out.print("Enter Password : ");
-		password = sc.nextLine();
+		String password = sc5.nextLine();
+		userRegistration.setPassword(password);
 		boolean check = password.matches("^(?=.*[A-Z a-z])(?=.*[0-9])(?=.*[@|#|$|%|^|&|-|+|=|(|)|]).{8,}$");
 		if (check == true) {
 		} else {
-			System.out.println("Invalid password format add atleast 8 character having a upper case" );
+			System.out.println("Invalid password format add atleast 8 character having a upper case");
 			addPassword();
 		}
+		return check;
 	}
-
-
-	public String getName1() {
-		return name1;
-	}
-
-	public void setName1(String name1) {
-		this.name1 = name1;
-	}
-
-	public String getName2() {
-		return name2;
-	}
-
-	public void setName2(String name2) {
-		this.name2 = name2;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		email = email;
-	}
-	public String getMobile() {
-		return mobile;
-	}
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
-	
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public Scanner getSc() {
-		return sc;
-	}
-
-	public void setSc(Scanner sc) {
-		this.sc = sc;
-	}
-
 }
+
+
+	
+	
+

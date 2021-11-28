@@ -6,25 +6,12 @@ public class UserRegistrationMain {
 		
 		System.out.println("Welcome to User registration program ");
 
-		String name1;
-		String name2;
-		String email;
-		String mobile;
-		String password;
+		RegexPattern regexPattern = new RegexPattern();
+		regexPattern.addFirstName();
+		regexPattern.addLastName();
+		regexPattern.addEmail();
+		regexPattern.addMobile();
+		regexPattern.addPassword();
 		
-		RegexPattern pattern = new RegexPattern();
-		
-		pattern.addFirstName();
-		name1 = pattern.getName1();
-		pattern.addLastName();
-		name2 = pattern.getName2();
-		pattern.addEmail();
-		email = pattern.getEmail();
-		pattern.addMobile();
-		mobile = pattern.getMobile();
-		pattern.addPassword();
-		password = pattern.getPassword();
-		
-		System.out.println("First name : " + name1 + "  Last name :" + name2 +"  Email id :" + email + "Mobile no. :" + mobile + "Password :" + password);
 	}
 }
