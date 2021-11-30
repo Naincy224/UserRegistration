@@ -67,4 +67,5 @@ public class UserRegistrationTest {
     	boolean result = regexPattern.addPassword();
     	assertEquals(false, result);
     }
+    
 }

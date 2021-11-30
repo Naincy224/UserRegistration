@@ -1,6 +1,7 @@
 package com.bridgeit;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class RegexPattern {
 
@@ -42,7 +43,7 @@ public class RegexPattern {
 		String email = sc3.nextLine();
 		userRegistration.setEmail(email);
 		boolean check = userRegistration.getEmail()
-				.matches("^[0-9a-zA-Z+-._]+@[-+_.0-9a-zA-Z]{2,}.[a-zA-Z]{2,3}.([a-zA-z]{2,3})*$");
+				.matches("^[0-9a-zA-Z+-._]+@[-+_.0-9a-zA-Z]{1,}.[a-zA-Z]{2,3}.([a-zA-z]{2,3})*$");
 		if (check == true) {
 		} else {
 			System.out.println("invalid email id add a valid email id");
@@ -79,6 +80,10 @@ public class RegexPattern {
 		}
 		return check;
 	}
+		public boolean addEmailId() {
+			return Pattern.matches("^[0-9a-zA-Z+-._]+@[-+_.0-9a-zA-Z]{1,}.[a-zA-Z]{2,3}.([a-zA-z]{2,3})*$", userRegistration.getEmail());
+		}
+	
 }
 
 
