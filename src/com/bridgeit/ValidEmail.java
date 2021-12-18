@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -16,17 +17,16 @@ import org.junit.runners.Parameterized.Parameters;
 public class ValidEmail {
 
 	private String email;
-	public static RegexPattern regexPattern;
-	public static UserRegistration userRegistration;
+	public  RegexPattern regexPattern;
+	public  UserRegistration userRegistration;
 
-	public ValidEmail() {
-		super();
+	public ValidEmail(String email) {
 		this.email = email;
 
 	}
 
 	@Before
-	public static void init() {
+	public  void init() {
 		regexPattern = new RegexPattern();
 		userRegistration = new UserRegistration();
 	}
@@ -38,8 +38,11 @@ public class ValidEmail {
 
 	}
 	
-	  @Test public void validEmailSampleTest() { userRegistration.setEmail(email);
-	  assertEquals(true, regexPattern.addEmailId());
+	  @Test 
+	  public void validEmailSampleTest() {
+		  userRegistration.setEmail(email);
+		  regexPattern.userRegistration=userRegistration;
+		  assertEquals(true, regexPattern.addEmailId());
 	  
 	  }
 	  
